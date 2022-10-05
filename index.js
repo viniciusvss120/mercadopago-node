@@ -51,6 +51,13 @@ app.get("/pagar", async (req,res) => {
   
 })
 
+app.post("/not", (req, res) => {
+    console.log(req.query)
+    res.send("ok")
+})
+
 app.listen(8080, () => {
     console.log("Servidor rodando!")
 })
+
+// 413380Vss
