@@ -52,7 +52,22 @@ app.get("/pagar", async (req,res) => {
 })
 
 app.post("/not", (req, res) => {
-    console.log(req.query)
+    let id = req.query.id
+
+    setTimeout(() => {
+        let filtro = {
+            "oder.id": id
+        }
+
+        MercadoPago.payment.search({
+            qs: filtro
+        }).then(data => {
+            console.log(data)
+        }).catch(err => {
+            console.log(err)
+        })
+    },20000)
+
     res.send("ok")
 })
 
